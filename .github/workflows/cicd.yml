@@ -8,6 +8,6 @@ jobs:
     with:
       org: homebotz
       imageName: debian-dev
-    secrets:
+      defaultBranch: master
       username: ${{ secrets.DOCKER_HUB_USERNAME }}
       password: ${{ secrets.DOCKER_HUB_TOKEN }}
