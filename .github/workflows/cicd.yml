@@ -9,5 +9,6 @@ jobs:
       org: homebotz
       imageName: debian-dev
       defaultBranch: master
-      username: ${ secrets.DOCKER_HUB_USERNAME }
-      password: ${ secrets.DOCKER_HUB_TOKEN }
+    secrets:
+      username: ${{ secrets.DOCKER_HUB_USERNAME }}
+      password: ${{ secrets.DOCKER_HUB_TOKEN }}
