@@ -1,6 +1,5 @@
 FROM debian:latest
 
-# apt-get remove python python-is-python2 pip && \
 RUN apt-get update && \
   apt-get install -y \
   autoconf \
@@ -23,9 +22,9 @@ RUN apt-get update && \
   ncurses-dev \
   nano \
   patch \
-  python3 \
-  python3-pip \
-  python-is-python3 \
+  python \
+  python-dev \
+  pip \
   pkg-config \
   unrar-free \
   sed \
@@ -35,7 +34,6 @@ RUN apt-get update && \
   zlib1g-dev \
   --no-install-recommends && \
   apt-get install -y ca-certificates && \
-  pip3 install pyserial && \
   rm -rf /var/lib/apt/lists/*
 
 RUN useradd -ms /bin/bash debian && usermod -a -G dialout debian
