@@ -5,7 +5,7 @@ Base image with all the dependencies for building code with gcc and g++.
 ## Usage
 
 ```Dockerfile
-FROM homebotz/debian-dev
+FROM ghcr.io/homebots/debian-dev
 
 RUN echo "do your stuff here"
 ```

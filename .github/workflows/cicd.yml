@@ -1,14 +1,18 @@
 name: CICD
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
     uses: homebots/workflows/.github/workflows/docker-build-and-push.yml@master
     with:
-      org: homebotz
+      registry: ghcr.io
+      org: ghcr.io/homebots
       imageName: debian-dev
-      defaultBranch: master
+      defaultBranch: main
     secrets:
-      username: ${{ secrets.DOCKER_HUB_USERNAME }}
-      password: ${{ secrets.DOCKER_HUB_TOKEN }}
+      username: ${{ github.actor }}
+      password: ${{ secrets.GITHUB_TOKEN }}
